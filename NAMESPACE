@@ -1,7 +1,7 @@
+importFrom(jl4R,rand)
 export(vam)
 export(params)
 export(mle)
-importFrom(jl4R,rand)
 
 S3method(simulate,vam)
 S3method(rand,vam)
