@@ -9,7 +9,7 @@
         ## cat("VirtualAgeModels.jl installed...\n")
     } else {
         ##jlpkgadd(VirtualAgeModels)
-         jlpkgadd(url="https://github.com/ReliableTeam/VirtualAgeModels.jl")
-        ## stop("Julia package VirtualAgeModels.jl needs to be installed...")
+        ## jlpkgadd(url="https://github.com/ReliableTeam/VirtualAgeModels.jl")
+        stop("Julia package VirtualAgeModels.jl needs to be installed...")
     }
 }
