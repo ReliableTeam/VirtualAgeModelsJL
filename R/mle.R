@@ -6,5 +6,6 @@ mle.vam <- function(vam, theta=NULL, data = data.frame(), datacov= data.frame())
     } else {
             jl[[mle]](vam$model, jlvalue(theta), jlvalue(data), jlvalue(datacov))
     }
-    mle
+    vam$mle <- mle
+    params(vam)
 }
