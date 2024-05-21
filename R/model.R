@@ -20,6 +20,6 @@ params.vam <- function(vam) jl[[params]](vam$model)
 
 model.frame.vam <- function(vam, datacov=TRUE) {
     list(
-        data = jl[[data]](vam$model)),
-        datacov =  
+        data = jl[[data]](vam$model)
+    ) 
 }
