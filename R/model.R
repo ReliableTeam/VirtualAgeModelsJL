@@ -5,10 +5,10 @@ vam <- function(form, data = data.frame(), datacov = data.frame()) {
     vam <- new.env() # could add later mle when needed
     vam$jl = jlcode
     vam$model = jl(as.name(jlcode))
-    vam$data = jlvalue(data)
-    vam$datacov = jlvalue(datacov)
-    jl[["data!"]](vam$model, vam$data, vam$datacov)
+    vam$data <- jlvalue(data)
+    vam$datacov <- jlvalue(datacov)
     class(vam) <- "vam"
+    update(vam, data=data, datacov=datacov)
     vam
 }
 
@@ -18,6 +18,14 @@ params <- function(obj, ...) UseMethod("params")
 params.vam <- function(vam) jl[[params]](vam$model)
 "params<-.vam" <- function(vam, pars) jl[["params!"]](vam$model, jlvalue(pars))
 
+## To update data and/or datacov
+update.vam <- function(vam, data = data.frame(), datacov = data.frame()) {
+    if(nrow(data) > 0) vam$data <- jlvalue(data)
+    if(nrow(datacov) > 0) vam$datacov <- jlvalue(datacov)
+    jl[["data!"]](vam$model, vam$data, vam$datacov)
+}
+
+## To get data and/or datacov
 model.frame.vam <- function(vam, datacov=TRUE) {
     list(
         data = jl[[data]](vam$model)
