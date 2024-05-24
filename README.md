@@ -19,7 +19,7 @@ Choose one of these two methods:
 ``` bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ReliableTeam/VirtualAgeModelsJL/HEAD/inst/install.sh)"
 ```
-* Inside `R`
+* Inside `R`:
 ``` R
 remotes::install_github("ReliableTeam/VirtualAgeModelsJL")
 ```
