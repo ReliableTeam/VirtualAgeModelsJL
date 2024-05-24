@@ -5,7 +5,7 @@
         stop("jl4R needs to be installed! Copy-paste in some bash terminal: /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/rcqls/jl4R/HEAD/inst/install.sh)\" to install it.")
     }
     if(R(jlpkgisinstalled(VirtualAgeModels))) {
-        jlusing("VirtualAgeModels")
+        jl4R:::jlusing_force("VirtualAgeModels")
         ## cat("VirtualAgeModels.jl installed...\n")
     } else {
         cat("Julia package VirtualAgeModels.jl is needed...\n")
