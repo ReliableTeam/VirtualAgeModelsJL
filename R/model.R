@@ -15,7 +15,7 @@ vam <- function(form, data = data.frame(), datacov = data.frame()) {
 params <- function(obj, ...) UseMethod("params")
 "params<-" <- function(obj, ...) UseMethod("params<-")
 
-params.vam <- function(vam) jl(params)(vam$model)
+params.vam <- function(vam) R(jl(params)(vam$model))
 "params<-.vam" <- function(vam, pars) jl(`params!`)(vam$model, pars)
 
 ## To update data and/or datacov
