@@ -20,8 +20,8 @@ params.vam <- function(vam) R(jl(params)(vam$model))
 
 ## To update data and/or datacov
 update.vam <- function(vam, data = data.frame(), datacov = data.frame()) {
-    if(nrow(data) > 0) vam$data <- jlvalue(data)
-    if(nrow(datacov) > 0) vam$datacov <- jlvalue(datacov)
+    if(nrow(data) > 0) vam$data <- data
+    if(nrow(datacov) > 0) vam$datacov <- datacov
     jl(`data!`)(vam$model, vam$data, vam$datacov)
 }
 
