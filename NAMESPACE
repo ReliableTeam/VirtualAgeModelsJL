@@ -1,4 +1,4 @@
-importFrom(jl4R,rand)
+importFrom(Rulia,rand)
 export(vam)
 export(params)
 export("params<-")
