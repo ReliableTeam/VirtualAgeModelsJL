@@ -9,7 +9,7 @@ Calling [VirtualAgeModels.jl](https://) inside R
 ``` julia
 Import Pkg; Pkg.add("VirtualAgeModels")
 ```
-* Finally, `VirtualAgeModelsJL` is a wrapper of `VirtualAgeModels.jl` depending on [jl4R](https://github.com/rcqls/jl4R) to install before.
+* Finally, `VirtualAgeModelsJL` is a wrapper of `VirtualAgeModels.jl` depending on [Rulia](https://github.com/rcqls/Rulia) to install before.
 
 ## Install inside `R`
 
