@@ -15,13 +15,13 @@ vam <- function(form, data = data.frame(), datacov = data.frame()) {
 params <- function(obj, ...) UseMethod("params")
 "params<-" <- function(obj, ...) UseMethod("params<-")
 
-params.vam <- function(vam) jl(params)(vam$model)
+params.vam <- function(vam) R(jl(params)(vam$model))
 "params<-.vam" <- function(vam, pars) jl(`params!`)(vam$model, pars)
 
 ## To update data and/or datacov
 update.vam <- function(vam, data = data.frame(), datacov = data.frame()) {
-    if(nrow(data) > 0) vam$data <- jlvalue(data)
-    if(nrow(datacov) > 0) vam$datacov <- jlvalue(datacov)
+    if(nrow(data) > 0) vam$data <- data
+    if(nrow(datacov) > 0) vam$datacov <- datacov
     jl(`data!`)(vam$model, vam$data, vam$datacov)
 }
 

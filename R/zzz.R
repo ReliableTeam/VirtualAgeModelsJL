@@ -1,11 +1,11 @@
 .onLoad <- function(lib, pkg) {
-    if (require(jl4R)) {
-        ## cat("jl4R installed...\n")
+    if (require(Rulia)) {
+        ## cat("Rulia installed...\n")
     } else {
-        stop("jl4R needs to be installed! Copy-paste in some bash terminal: /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/rcqls/jl4R/HEAD/inst/install.sh)\" to install it.")
+        stop("Rulia needs to be installed! Copy-paste in some bash terminal: /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/rcqls/Rulia/HEAD/inst/install.sh)\" to install it.")
     }
     if(R(jlpkgisinstalled(VirtualAgeModels))) {
-        jl4R:::jlusing_force("VirtualAgeModels")
+        Rulia:::jlusing_force("VirtualAgeModels")
         ## cat("VirtualAgeModels.jl installed...\n")
     } else {
         cat("Julia package VirtualAgeModels.jl is needed...\n")
